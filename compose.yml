@@ -1,0 +1,22 @@
+services:
+  postgresql:
+    container_name: ms_pg_sql
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: Deeplearning8962@#$
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - microservices-net
+    restart: unless-stopped
+networks:
+  microservices-net:
+    driver: bridge
+
+volumes:
+  postgres:
+
+
